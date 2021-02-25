@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var flipAndInvertImage = function (A) {
+            // 翻转每一行
+            for (let i = 0; i < A.length; i++) {
+                A[i].reverse()
+                for (let J = 0; J < A[i].length; J++) {
+                    if (A[i][J] == 1) {
+                        A[i][J] = 0
+                    } else {
+                        A[i][J] = 1
+                    }
+                    
+                }
+            }
+
+            return A
+        };
+        var arr = flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
+        console.log('结果是',arr);
+
+        // 
+    </script>
+</body>
+</html>
