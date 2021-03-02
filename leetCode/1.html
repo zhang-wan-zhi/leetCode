@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getBit(word) {
+            let res = 0;
+            for (const c of word) {
+                const offset = c.charCodeAt(0) - 97; // a在最低位，求出当前字符的偏移位
+                const status = 1 << offset; // 将二进制的1左移offset位，右边用0填充
+                res = res | status; // 按位或，该位至少有一个1时，才为1（出现过），否则为0
+            }
+            return res;
+        }
+        console.log(getBit('abc'));
+        console.log(getBit('abbbccc'));
+        console.log(getBit('aaaabbbc'));
+        console.log("b".charCodeAt(0));
+        console.log(1|10);
+        console.log(10|10);
+        console.log(01|10);
+        const frequency = new Map();
+        console.log('Map',frequency);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组查重
+        var findRepeatNumber = function (nums) {
+            for (let value of nums) {
+
+                if (nums.indexOf(value) != -1) {
+                    return value
+                }
+            }
+
+
+        };
+
+        let arr = [2, 3, 1, 0, 2, 5, 3]
+        console.log('111', arr.indexOf(1));
+        console.log(findRepeatNumber(arr));
+
+        var findRepeatNumbers = function (nums) {
+            // map 存储
+            let numMap = {}
+            let numsLength = nums.length
+            for (let i = 0; i < numsLength; i++) {
+                // 如果 map 中有存储，证明重复，直接返回
+                if (numMap[nums[i]] !== undefined) {
+                    return nums[i]
+                }
+                // 否则记录到 map 
+                else {
+                    numMap[nums[i]] = 1
+                }
+            }
+        };
+
+        console.log(findRepeatNumbers(arr));
+    </script>
+</body>
+
+</html>

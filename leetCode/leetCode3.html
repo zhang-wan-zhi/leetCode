@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <SCript>
+        /* 给你一个二维整数数组 matrix， 返回 matrix 的 转置矩阵 。
+        矩阵的 转置 是指将矩阵的主对角线翻转，交换矩阵的行索引与列索引。
+        输入：matrix = [[1,2,3],[4,5,6],[7,8,9]]
+        输出：[[1,4,7],[2,5,8],[3,6,9]]
+       */
+        var transpose = function (matrix) {
+            newArr = []
+            for (let i = 0; i < matrix.length; i++) {
+                for (let j = 0; j < matrix[i].length; j++) {
+                    if (!(newArr[j] instanceof Array)) {
+                        newArr[j] = new Array
+                    }
+                    newArr[j].push(matrix[i][j])
+                }
+            }
+            return newArr
+        };
+
+        const x = new Array(3) // 建立一个长度为3的空数组
+
+        console.log(x);
+        x.fill(0) // 全部填0
+        console.log(x); // [0,0,0,]
+        const transposed = new Array(4).fill(0).map(() => new Array(3).fill(0)); // 创建一个4*3的二维数组
+        console.log('transposed', transposed);
+
+        // 官方答案
+        var transpose = function (matrix) {
+            const m = matrix.length, n = matrix[0].length;
+            const transposed = new Array(n).fill(0).map(() => new Array(m).fill(0));
+            for (let i = 0; i < m; i++) {
+                for (let j = 0; j < n; j++) {
+                    transposed[j][i] = matrix[i][j];
+                }
+            }
+            return transposed;
+        };
+    </SCript>
+</body>
+
+</html>
